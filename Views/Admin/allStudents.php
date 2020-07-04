@@ -1,50 +1,64 @@
 <!DOCTYPE html>
+<?php
+include 'sidNav.php';
+?>
 
 <head>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <!------ Include the above in your HEAD tag ---------->
-    <!-- <link rel="stylesheet" href="../assets/css/login.css"> -->
-
-<style>
-
-.content {
-    min-height: 250px;
-    padding: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-</style>
+    <link href="../../assets/css/bootstrap.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <style>
+        .content {
+            min-height: 250px;
+            padding: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    </style>
 </head>
 
 <body>
-<div class="content">
-    <div class="clearfix"></div>
+    <div class="content">
+        <div class="box box-primary">
+            <div class="box-body">
+                <div class="table-responsive">
+                    <table class="table table-striped" id="appliedartists-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                               
+                                <th colspan="3" style=" padding-left: 2%;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            require_once("../../Models/dbConnection.php");
+                            $users = mysqli_query($connect, "select * from users");
+                            while ($row = mysqli_fetch_assoc($users)) {
 
-    
-    <div class="clearfix"></div>
-    <div class="box box-primary">
-        <div class="box-body">
-            <div class="table-responsive">
-    <table class="table table-striped" id="appliedartists-table">
-        <thead>
-            <tr>
-                <th>Name</th>
-        <th>Email</th>
-        <th>Phone</th>
-                <th colspan="3" style=" padding-left: 2%;">Action</th>
-            </tr>
-        </thead>
-        <tbody>
-                </tbody>
-    </table>
-</div>
+                            ?>
+                                <tr>
+                                    <td><?php echo $row['name']; ?></td>
+                                    <td><?php echo $row['email']; ?></td>
+                                    <td>
+                                        <form method="POST" action="" accept-charset="UTF-8"><input name="_method" type="hidden" value="DELETE"><input name="_token" type="hidden" value="">
+                                            <div class="btn-group">
+                                                <a style=" margin-left: 15px;margin-right: 15px;" href="editStudent.php/?id=<?php echo $row['id']; ?>" class="btn btn-default btn-xs"><i class="fas fa-edit"></i> </a>
+                                                <a style=" margin-left: 15px;margin-right: 15px;" href="" id="<?php echo $row['id']; ?>"
+                                                 class="deletebtn btn btn-default btn-xs"><i class="far fa-trash-alt " style="color:red"></i> </a>
+                                            </div>
+                                        </form>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="text-center">
-
-    </div>
-</div>
+    <script type="text/javascript" src="../../assets/js/deleteUser.js"></script>
+</body>
