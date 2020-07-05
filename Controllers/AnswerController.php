@@ -1,7 +1,7 @@
 <?php
 // DB connection
 include '../Models/dbConnection.php';
-// update quiz
+// update answer
 if (isset($_POST["done"])) {
     $name = mysqli_escape_string($connect, $_POST['name']);
     $Score = mysqli_escape_string($connect, $_POST['Score']);
@@ -16,14 +16,15 @@ if (isset($_POST["done"])) {
     } else {
         echo "Result false";
     }
-    // delete quiz
-} elseif (isset($_POST["quizID"])) {
-    $query = "delete from Quiz where id=" . $_POST["quizID"];
+    // delete answer
+} elseif (isset($_POST["ansID"])) {
+    echo $_POST["ansID"];
+    $query = "delete from Answer where id=" . $_POST["ansID"];
     $result = mysqli_query($connect, $query);
     if ($result) {
         echo "success";
     }
-    // add quiz
+    // add answer
 } else if (isset($_POST["add"])) {
     if (!empty($_POST["name"]) && !empty($_POST["Score"])) {
         $name = mysqli_escape_string($connect, $_POST['name']);

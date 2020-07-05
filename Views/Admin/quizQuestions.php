@@ -2,8 +2,10 @@
 
 <?php
 include 'editNav.php';
+require_once("../../Models/dbConnection.php");
+// echo $_GET["id"];
 ?>
-<a href="addQuiz.php" class="btn " style=" background-color: #428bca; color:honeydew;margin-left: 15px;"> Add Question </a>
+<a href="../addQuestion.php/?id=<?php echo $_GET['id'] ?>" class="btn " style=" background-color: #428bca; color:honeydew;margin-left: 15px;"> Add Question </a>
 
 <head>
     <link href="../../assets/css/bootstrap.css" rel="stylesheet" />
@@ -37,20 +39,23 @@ include 'editNav.php';
                         </thead>
                         <tbody>
                             <?php
-                            require_once("../../Models/dbConnection.php");
                             $users = mysqli_query($connect, "select * from Question where quiz_id=" . $_GET['id']);
                             while ($row = mysqli_fetch_assoc($users)) {
 
                             ?>
                                 <tr>
                                     <td><?php echo $row['text']; ?></td>
-                                    <td><?php include 'answers.php';?></td>
+                                    <td><?php include 'answers.php'; ?></td>
                                     <td>
                                         <form method="POST" action="" accept-charset="UTF-8">
                                             <div class="btn-group">
-                                                <a style=" margin-left: 15px;margin-right: 15px;" href="editQuiz.php/?id=<?php echo $row['id']; ?>" class="btn btn-default btn-xs"><i class="fas fa-edit"></i> </a>
-                                                <a style=" margin-left: 15px;margin-right: 15px;" href="" id="<?php echo $row['id']; ?>" class="deletebtn btn btn-default btn-xs"><i class="far fa-trash-alt " style="color:red"></i> </a>
-                                                <a href="quizQuestions.php/?id=<?php echo $row['id']; ?>" class="btn btn-default btn-xs"> </div><i class="fas fa-info"></i> </a>
+                                                <a style=" margin-left: 15px;margin-right: 15px;"
+                                                 href="../editQuestion.php/?id=<?php echo $row['id']; ?>" 
+                                                 class="btn btn-default btn-xs"><i class="fas fa-edit"></i> </a>
+                                                 
+                                                <a style=" margin-left: 15px;margin-right: 15px;" 
+                                                href="" id="<?php echo $row['id']; ?>" class="Qdeletebtn btn btn-default btn-xs">
+                                                <i class="far fa-trash-alt " style="color:red"></i> </a>
                                         </form>
                                     </td>
                                 </tr>
@@ -62,5 +67,6 @@ include 'editNav.php';
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="../../assets/js/deleteQuiz.js"></script>
+    <script type="text/javascript" src="../../../assets/js/deleteQuestion.js"></script>
+
 </body>

@@ -1,5 +1,5 @@
-console.log("GAqqqAAAAAAAAAG");
-$(".deletebtn").on("click",function(){
+console.log("dddddddddddddG");
+$(".Qdeletebtn").on("click",function(){
     console.log("GGGGGGGGGGGGGGGffffdddGGGGGGGGGGGGGG");
 
 	console.log(this.id);
@@ -7,9 +7,9 @@ $(".deletebtn").on("click",function(){
     let currentRow=this;
 	 $.ajax({
         type: 'POST',
-        url: "../../../Controllers/AnswerController.php",
+        url: "../../../Controllers/QuestionController.php",
         data: {
-            "ansID": selectedUser,
+            "questionID": selectedUser,
         },
         success: function (result) {
             if(result == "success")
