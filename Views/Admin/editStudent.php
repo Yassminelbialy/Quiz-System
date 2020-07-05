@@ -1,49 +1,51 @@
 <!DOCTYPE html>
 <html>
+<?php
+include 'editNav.php';
+?>
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../../../assets/css/bootstrap.css" rel="stylesheet" />
-    <link href="../../../assets/css/font-awesome.css" rel="stylesheet" />
-    <style>
-        nav {
-            background-color: #428bca;
-            height: 80px;
-        }
-    </style>
-</head>
+<!-- Table -->
+<div class="content">
+    <div class="box box-primary">
+        <div class="box-body">
+            <div class="table-responsive">
+                <table class="table table-striped" id="appliedartists-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
 
-<body>
-    <!--Navbar -->
-    <nav class="mb-1 navbar navbar-expand-lg navbar-dark secondary-color lighten-1">
-        <a class="navbar-brand" href="admin.php">Edmodo</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" 
-        data-target="#navbarSupportedContent-555" aria-controls="navbarSupportedContent-555" 
-        aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="../admin.php">Home
-                    </a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="../allStudents.php"> Students
-                    </a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="../allQuizzes.php"> Quizzes
-                    </a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto nav-flex-icons">
-                <li class="nav-item avatar dropdown">
-                    <a href="../login.php" class="navbar-brand">Log out</a>
-                </li>
-            </ul>
+                            <th colspan="3" style=" padding-left: 2%;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        require_once("../../Models/dbConnection.php");
+                        if (isset($_GET['id'])) {
+                            $user = mysqli_query($connect, "select * from users where id=" . $_GET['id']);
+                            while ($row = mysqli_fetch_assoc($user)) {
+
+                        ?>
+                                <tr>
+                                    <form method="POST" action="../../../Controllers/StudentsController.php" accept-charset="UTF-8">
+                                        <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                                        <td><input type="text" name="name" id="" value="<?php echo $row['name']; ?>"> </td>
+                                        <td><input type="text" name="email" id="" value="<?php echo $row['email']; ?>"> </td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <input type="submit" value="Update" name="done" class="btn " style=" background-color: #428bca; color:honeydew;">
+                                            </div>
+                                    </form>
+                                    </td>
+                                </tr>
+                        <?php }
+                        } ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </nav>
+    </div>
+</div>
 </body>
 
 </html>

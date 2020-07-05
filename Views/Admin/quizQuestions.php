@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 
 <?php
-include 'sidNav.php';
+include 'editNav.php';
 ?>
 <a href="addQuiz.php" class="btn " style=" background-color: #428bca; color:honeydew;margin-left: 15px;"> Add Quiz </a>
-
 <head>
     <link href="../../assets/css/bootstrap.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -29,8 +28,8 @@ include 'sidNav.php';
                     <table class="table table-striped" id="appliedartists-table">
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Score</th>
+                                <th>Question Text</th>
+                                <th>Answers</th>
 
                                 <th colspan="3" style=" padding-left: 2%;">Action</th>
                             </tr>
@@ -38,13 +37,13 @@ include 'sidNav.php';
                         <tbody>
                             <?php
                             require_once("../../Models/dbConnection.php");
-                            $users = mysqli_query($connect, "select * from Quiz");
+                            $users = mysqli_query($connect, "select * from Question where quiz_id=" . $_GET['id']);
                             while ($row = mysqli_fetch_assoc($users)) {
 
                             ?>
                                 <tr>
-                                    <td><?php echo $row['name']; ?></td>
-                                    <td><?php echo $row['Score']; ?></td>
+                                    <td><?php echo $row['text']; ?></td>
+                                    <td><?php echo $row['id']; ?></td>
                                     <td>
                                         <form method="POST" action="" accept-charset="UTF-8"><input name="_method" type="hidden" value="DELETE"><input name="_token" type="hidden" value="">
                                             <div class="btn-group">
