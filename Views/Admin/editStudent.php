@@ -29,8 +29,8 @@ include 'editNav.php';
                                 <tr>
                                     <form method="POST" action="../../../Controllers/StudentsController.php" accept-charset="UTF-8">
                                         <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-                                        <td><input type="text" name="name" id="" value="<?php echo $row['name']; ?>"> </td>
-                                        <td><input type="text" name="email" id="" value="<?php echo $row['email']; ?>"> </td>
+                                        <td><input type="text" class="form-control" name="name" id="" value="<?php echo $row['name']; ?>"> </td>
+                                        <td><input type="text" class="form-control" name="email" id="" value="<?php echo $row['email']; ?>"> </td>
                                         <td>
                                             <div class="btn-group">
                                                 <input type="submit" value="Update" name="done" class="btn " style=" background-color: #428bca; color:honeydew;">

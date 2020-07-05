@@ -3,7 +3,8 @@
 <?php
 include 'editNav.php';
 ?>
-<a href="addQuiz.php" class="btn " style=" background-color: #428bca; color:honeydew;margin-left: 15px;"> Add Quiz </a>
+<a href="addQuiz.php" class="btn " style=" background-color: #428bca; color:honeydew;margin-left: 15px;"> Add Question </a>
+
 <head>
     <link href="../../assets/css/bootstrap.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -43,9 +44,9 @@ include 'editNav.php';
                             ?>
                                 <tr>
                                     <td><?php echo $row['text']; ?></td>
-                                    <td><?php echo $row['id']; ?></td>
+                                    <td><?php include 'answers.php';?></td>
                                     <td>
-                                        <form method="POST" action="" accept-charset="UTF-8"><input name="_method" type="hidden" value="DELETE"><input name="_token" type="hidden" value="">
+                                        <form method="POST" action="" accept-charset="UTF-8">
                                             <div class="btn-group">
                                                 <a style=" margin-left: 15px;margin-right: 15px;" href="editQuiz.php/?id=<?php echo $row['id']; ?>" class="btn btn-default btn-xs"><i class="fas fa-edit"></i> </a>
                                                 <a style=" margin-left: 15px;margin-right: 15px;" href="" id="<?php echo $row['id']; ?>" class="deletebtn btn btn-default btn-xs"><i class="far fa-trash-alt " style="color:red"></i> </a>
@@ -53,7 +54,8 @@ include 'editNav.php';
                                         </form>
                                     </td>
                                 </tr>
-                            <?php } ?>
+                            <?php }
+                            ?>
                         </tbody>
                     </table>
                 </div>
