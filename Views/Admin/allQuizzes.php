@@ -39,10 +39,13 @@ include 'sidNav.php';
                             <?php
                             require_once("../../Models/dbConnection.php");
                             $users = mysqli_query($connect, "select * from Quiz");
+                            $i = 0;
                             while ($row = mysqli_fetch_assoc($users)) {
-
+                                $i += +1;
                             ?>
                                 <tr>
+                                    <td><?php echo $i; ?></td>
+
                                     <td><?php echo $row['name']; ?></td>
                                     <td><?php echo $row['Score']; ?></td>
                                     <td>

@@ -31,31 +31,32 @@ require_once("../../Models/dbConnection.php");
                     <table class="table table-striped" id="appliedartists-table">
                         <thead>
                             <tr>
+                                <th>Question Number</th>
                                 <th>Question Text</th>
-                                <th>Answers</th>
-
+                                <th>Answers </th>
                                 <th colspan="3" style=" padding-left: 2%;">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
                             $users = mysqli_query($connect, "select * from Question where quiz_id=" . $_GET['id']);
+                            $i = 0;
                             while ($row = mysqli_fetch_assoc($users)) {
+                                $i += +1;
 
                             ?>
                                 <tr>
+                                    <td><?php echo $i; ?></td>
+
                                     <td><?php echo $row['text']; ?></td>
                                     <td><?php include 'answers.php'; ?></td>
                                     <td>
                                         <form method="POST" action="" accept-charset="UTF-8">
                                             <div class="btn-group">
-                                                <a style=" margin-left: 15px;margin-right: 15px;"
-                                                 href="../editQuestion.php/?id=<?php echo $row['id']; ?>" 
-                                                 class="btn btn-default btn-xs"><i class="fas fa-edit"></i> </a>
-                                                 
-                                                <a style=" margin-left: 15px;margin-right: 15px;" 
-                                                href="" id="<?php echo $row['id']; ?>" class="Qdeletebtn btn btn-default btn-xs">
-                                                <i class="far fa-trash-alt " style="color:red"></i> </a>
+                                                <a style=" margin-left: 15px;margin-right: 15px;" href="../editQuestion.php/?id=<?php echo $row['id']; ?>" class="btn btn-default btn-xs"><i class="fas fa-edit"></i> </a>
+
+                                                <a style=" margin-left: 15px;margin-right: 15px;" href="" id="<?php echo $row['id']; ?>" class="Qdeletebtn btn btn-default btn-xs">
+                                                    <i class="far fa-trash-alt " style="color:red"></i> </a>
                                         </form>
                                     </td>
                                 </tr>

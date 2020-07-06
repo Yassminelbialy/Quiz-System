@@ -5,3 +5,4 @@ if (!$connect) {
 	echo mysqli_connect_error();
 	exit;
 }
+?>
