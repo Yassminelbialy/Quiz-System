@@ -21,6 +21,9 @@ if (!empty($_POST["email"]) && !empty($_POST["password"])) {
                 session_start();
                 $_SESSION['name'] = $res[1];
                 $_SESSION['id'] = $res[0];
+                var_dump($_SESSION['name']);
+                var_dump($_SESSION['id']);
+
                 header("Location:../Views/student.php");
             } else {
                 header("Location:../Views/login.php");
@@ -30,3 +33,4 @@ if (!empty($_POST["email"]) && !empty($_POST["password"])) {
         }
     }
 }
+// 
