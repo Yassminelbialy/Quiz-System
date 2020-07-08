@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand js-scroll-trigger">Emodo</a>
         </div>
@@ -20,13 +20,13 @@
     <div class="container">
         <div class="row register">
             <div class="col-sm-6 col-md-4 col-md-offset-4">
-            <h1 class="text-center login-title"><strong>Edmodo</strong></h1>
+                <h1 class="text-center login-title"><strong>Edmodo</strong></h1>
                 <div class="account-wall">
                     <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120" alt="">
                     <form class="form-signin" action="../Controllers/registerController.php" method="POST">
                         <input type="text" class="form-control" name="name" placeholder="Name" required autofocus>
-                        <input type="text" class="form-control" name="email" placeholder="Email" required >
-                        <input type="password" class="form-control" name="password"placeholder="Password" required>
+                        <input type="text" class="form-control" name="email" placeholder="Email" required>
+                        <input type="password" class="form-control" name="password" placeholder="Password" required>
                         <input type="password" class="form-control" placeholder="Re-Password" required>
 
                         <button class="btn btn-lg btn-primary btn-block" name="done" type="submit">

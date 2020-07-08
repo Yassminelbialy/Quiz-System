@@ -13,8 +13,8 @@ include 'editNav.php';
                     <table class="table table-striped" id="appliedartists-table">
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Email</th>
+                                <th>percentage</th>
+                                <th>Pass</th>
                                 <th colspan="3" style=" padding-left: 2%;">Action</th>
                             </tr>
                         </thead>
@@ -22,14 +22,15 @@ include 'editNav.php';
                             <?php
                             require_once("../../Models/dbConnection.php");
                             if (isset($_GET['id'])) {
-                                $user = mysqli_query($connect, "select * from users where id=" . $_GET['id']);
+                                $user = mysqli_query($connect, "select * from user_quiz where id=" . $_GET['id']);
                                 while ($row = mysqli_fetch_assoc($user)) {
                             ?>
                                     <tr>
-                                        <form method="POST" action="../../../Controllers/StudentsController.php" accept-charset="UTF-8">
+                                        <form method="POST" action="../../../Controllers/GradesController.php" accept-charset="UTF-8">
                                             <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-                                            <td><input type="text" class="form-control" name="name" id="" value="<?php echo $row['name']; ?>"> </td>
-                                            <td><input type="text" class="form-control" name="email" id="" value="<?php echo $row['email']; ?>"> </td>
+
+                                            <td><input type="text" class="form-control" name="grade" id="" value="<?php echo $row['grade']; ?>"> </td>
+                                            <td><input type="text" class="form-control" name="pass" id="" value="<?php echo $row['pass']; ?>"> </td>
                                             <td>
                                                 <div class="btn-group">
                                                     <input type="submit" value="Update" name="done" class="btn " style=" background-color: #2c3e50; color:honeydew;">

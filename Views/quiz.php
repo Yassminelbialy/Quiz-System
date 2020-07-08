@@ -10,9 +10,7 @@
 
 <body>
     <?php
-    // include 'editNav.php';
     require_once("../Models/dbConnection.php");
-    // echo $_GET["id"];
     ?>
     <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
         <div class="container">
@@ -20,12 +18,12 @@
         </div>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item mx-0 mx-lg-1" style="color:white"><?php
-                                                                        session_start();
-                                                                        if (!isset($_SESSION['id']))
-                                                                            header("Location:login.php");
-                                                                        echo $_SESSION['name'] ?></li>
-
+                <li class="nav-item mx-0 mx-lg-1" style="color:white">
+                    <?php
+                    session_start();
+                    if (!isset($_SESSION['id']))
+                        header("Location:login.php");
+                    echo $_SESSION['name'] ?></li>
             </ul>
         </div>
     </nav>
@@ -56,8 +54,8 @@
                                         <td><?php echo $i; ?></td>
                                         <td>
 
-                                            <h2 style="color:#1abc9c"><?php echo $row['text']; ?></h2>
-                                            <input type="hidden" name="quiz_id" value="<?php echo $_GET['id']?>">
+                                            <h3 style="color:#2c3e50"><?php echo $row['text']; ?></h3>
+                                            <input type="hidden" name="quiz_id" value="<?php echo $_GET['id'] ?>">
                                             <?php
                                             $answers = mysqli_query($connect, "select * from Answer where question_id=" . $row['id']);
                                             while ($ans = mysqli_fetch_assoc($answers)) {
@@ -65,7 +63,6 @@
                                                 } else {
                                                 }
                                             ?>
-
                                                 <div class="container">
                                                     <div class="radio" id="<?php echo $row['id']; ?>">
                                                         <label for="<?php echo $ans['id'] ?>">
@@ -79,14 +76,12 @@
                                         </td>
                                     </tr>
                                 <?php  } ?>
-                                <input type="submit"  class="btn btn-primary" style="color:white">
+                                <input type="submit" class="btn btn-primary" style="color:white">
                             </form>
                         </tbody>
                     </table>
-
                 </div>
             </div>
         </div>
     </div>
-
 </body>

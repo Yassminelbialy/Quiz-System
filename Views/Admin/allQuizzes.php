@@ -3,25 +3,10 @@
 <?php
 include 'sidNav.php';
 ?>
-<a href="addQuiz.php" class="btn " style=" background-color: #2c3e50; color:honeydew;margin-left: 15px;"> Add Quiz </a>
-
-<head>
-    <link href="../../assets/css/bootstrap.css" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <style>
-        .content {
-            min-height: 250px;
-            padding: 15px;
-            margin-right: auto;
-            margin-left: auto;
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-    </style>
-</head>
 
 <body>
+    <a href="addQuiz.php" class="btn " style=" background-color: #2c3e50; color:honeydew;margin-left: 15px;"> Add Quiz </a>
+
     <div class="content">
         <div class="box box-primary">
             <div class="box-body">
@@ -29,9 +14,9 @@ include 'sidNav.php';
                     <table class="table table-striped" id="appliedartists-table">
                         <thead>
                             <tr>
+                                <th>#</th>
                                 <th>Name</th>
                                 <th>Score</th>
-
                                 <th colspan="3" style=" padding-left: 2%;">Action</th>
                             </tr>
                         </thead>

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../../assets/css/bootstrap.css" rel="stylesheet" />
     <link href="../../assets/css/font-awesome.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <style>
         nav {
             background-color: #2c3e50;
@@ -17,9 +19,7 @@
     <!--Navbar -->
     <nav class="mb-1 navbar navbar-expand-lg navbar-dark secondary-color lighten-1">
         <a class="navbar-brand" href="admin.php">Edmodo</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" 
-        data-target="#navbarSupportedContent-555" aria-controls="navbarSupportedContent-555" 
-        aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555" aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent-555">

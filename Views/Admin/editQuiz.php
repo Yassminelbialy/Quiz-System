@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <?php
- include 'editNav.php';
+include 'editNav.php';
 ?>
-<html>
+
+<body>
     <!-- Table -->
     <div class="content">
         <div class="box box-primary">
@@ -23,7 +24,6 @@
                             if (isset($_GET['id'])) {
                                 $user = mysqli_query($connect, "select * from Quiz where id=" . $_GET['id']);
                                 while ($row = mysqli_fetch_assoc($user)) {
-
                             ?>
                                     <tr>
                                         <form method="POST" action="../../../Controllers/QuizController.php" accept-charset="UTF-8">

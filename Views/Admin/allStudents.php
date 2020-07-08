@@ -2,23 +2,6 @@
 <?php
 include 'sidNav.php';
 ?>
-
-<head>
-    <link href="../../assets/css/bootstrap.css" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <style>
-        .content {
-            min-height: 250px;
-            padding: 15px;
-            margin-right: auto;
-            margin-left: auto;
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-    </style>
-</head>
-
 <body>
     <div class="content">
         <div class="box box-primary">
@@ -29,7 +12,7 @@ include 'sidNav.php';
                             <tr>
                                 <th>Name</th>
                                 <th>Email</th>
-                               
+
                                 <th colspan="3" style=" padding-left: 2%;">Action</th>
                             </tr>
                         </thead>
@@ -38,7 +21,6 @@ include 'sidNav.php';
                             require_once("../../Models/dbConnection.php");
                             $users = mysqli_query($connect, "select * from users");
                             while ($row = mysqli_fetch_assoc($users)) {
-
                             ?>
                                 <tr>
                                     <td><?php echo $row['name']; ?></td>
@@ -47,8 +29,7 @@ include 'sidNav.php';
                                         <form method="POST" action="" accept-charset="UTF-8"><input name="_method" type="hidden" value="DELETE"><input name="_token" type="hidden" value="">
                                             <div class="btn-group">
                                                 <a style=" margin-left: 15px;margin-right: 15px;" href="editStudent.php/?id=<?php echo $row['id']; ?>" class="btn btn-default btn-xs"><i class="fas fa-edit"></i> </a>
-                                                <a style=" margin-left: 15px;margin-right: 15px;" href="" id="<?php echo $row['id']; ?>"
-                                                 class="deletebtn btn btn-default btn-xs"><i class="far fa-trash-alt " style="color:red"></i> </a>
+                                                <a style=" margin-left: 15px;margin-right: 15px;" href="" id="<?php echo $row['id']; ?>" class="deletebtn btn btn-default btn-xs"><i class="far fa-trash-alt " style="color:red"></i> </a>
                                             </div>
                                         </form>
                                     </td>

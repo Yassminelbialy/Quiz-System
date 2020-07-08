@@ -3,38 +3,28 @@
 <?php
 include 'editNav.php';
 require_once("../../Models/dbConnection.php");
-// echo $_GET["id"];
 ?>
-<a href="../addQuestion.php/?id=<?php echo $_GET['id'] ?>" class="btn " style=" background-color: #2c3e50; color:honeydew;margin-left: 15px;"> Add Question </a>
 
 <head>
     <link href="../../assets/css/bootstrap.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <style>
-        .content {
-            min-height: 250px;
-            padding: 15px;
-            margin-right: auto;
-            margin-left: auto;
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-    </style>
 </head>
 
 <body>
+    <a href="../addQuestion.php/?id=<?php echo $_GET['id'] ?>" class="btn " style=" background-color: #2c3e50; color:honeydew;margin-left: 15px;"> Add Question </a>
+
     <div class="content">
         <div class="box box-primary">
             <div class="box-body">
                 <div class="table-responsive">
-                    <table class="table table-striped" id="appliedartists-table">
+                    <table class="table table-striped" id="appliedartists-table" style="text-align: center;">
                         <thead>
                             <tr>
-                                <th>Question Number</th>
-                                <th>Question Text</th>
-                                <th>Answers </th>
-                                <th colspan="3" style=" padding-left: 2%;">Action</th>
+                                <th width="10%">Question Number</th>
+                                <th width="40%">Question Text</th>
+                                <th width="30%">Answers </th>
+                                <th width="20%" colspan="3" style=" padding-left: 2%;">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -43,7 +33,6 @@ require_once("../../Models/dbConnection.php");
                             $i = 0;
                             while ($row = mysqli_fetch_assoc($users)) {
                                 $i += +1;
-
                             ?>
                                 <tr>
                                     <td><?php echo $i; ?></td>
@@ -69,5 +58,4 @@ require_once("../../Models/dbConnection.php");
         </div>
     </div>
     <script type="text/javascript" src="../../../assets/js/deleteQuestion.js"></script>
-
 </body>

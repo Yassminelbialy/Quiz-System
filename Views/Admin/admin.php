@@ -23,7 +23,7 @@
                         <i class="fa fa-user" aria-hidden="true"></i>
 
                         <div class="card-body">
-                            <p> Students <span>1</span> </p>
+                            <p> Students  </p>
                         </div>
                     </div>
                 </a>
@@ -31,10 +31,9 @@
             <div class="col-sm-12 col-md-6">
                 <a href="allQuizzes.php">
                     <div class="card">
-                        <!-- <img class="card-img-top" src="images/art.png"> -->
                         <i class="fas fa-pencil-alt" aria-hidden="true"></i>
                         <div class="card-body">
-                            <p> Quizzes <span>1</span></p>
+                            <p> Quizzes </p>
                         </div>
                     </div>
                 </a>

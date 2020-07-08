@@ -6,7 +6,7 @@
              <div class="col-lg-4 mb-5 mb-lg-0">
                  <h4 class="text-uppercase mb-4">Location</h4>
                  <p class="lead mb-0">
-                     2215 John Daniel Drive
+                    Mansoura Samia Elgamal
                      <br />
                      Clark, MO 65243
                  </p>
@@ -24,8 +24,7 @@
                  <h4 class="text-uppercase mb-4">About Freelancer</h4>
                  <p class="lead mb-0">
                      Freelance is a free to use, MIT licensed Bootstrap theme created by
-                     <a href="http://startbootstrap.com">Start Bootstrap</a>
-                     .
+                     
                  </p>
              </div>
          </div>
@@ -33,5 +32,5 @@
  </footer>
  <!-- Copyright Section-->
  <div class="copyright py-4 text-center text-white">
-     <div class="container"><small>Copyright © Your Website 2020</small></div>
+     <div class="container"><small>Copyright © Yassmin Atif  2020</small></div>
  </div>

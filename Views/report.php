@@ -55,19 +55,19 @@ $pass_result = "";
                 </table>
 
                 <?php
-                $percent = ($true_answer / $total_questions) ;
-                if ($percent >= 0.5) 
-                    $pass_result = "pass";   
+                $percent = ($true_answer / $total_questions);
+                if ($percent >= 0.5)
+                    $pass_result = "pass";
                 else
-                $pass_result = "fail";
-                $percent=$percent*100;
+                    $pass_result = "fail";
+                $percent = $percent * 100;
                 $result = mysqli_query($connect, "insert into user_quiz set user_id='$user_id',quiz_id='$quiz_id'
                                 , pass='$pass_result', grade='$percent' ");
                 echo "   <h2 style='text-align:center'>Grade $percent %</h2>";
                 echo " <h2 style='text-align:center'>Status $pass_result  </h2>";
                 ?>
                 <div class="text-center">
-                <a class="btn-primary"style='margin-right:0 auto' href="student.php">Back Home</a>
+                    <a class="btn-primary" style='margin-right:0 auto' href="student.php">Back Home</a>
                 </div>
             </div>
         </div>
