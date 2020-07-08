@@ -30,17 +30,17 @@ $pass_result = "";
                         while ($row = mysqli_fetch_assoc($questions)) {
                             $i += +1;
                             $id = $row['id']; //the question id
-                            $_POST[$id]; // the answer
-                            $is_correct = mysqli_query($connect, "select * from Answer where id=" . $_POST[$id]);
-                            $row = mysqli_fetch_assoc($is_correct);
+                            if (isset($_POST[$id])) { // the answer
+                                $is_correct = mysqli_query($connect, "select * from Answer where id=" . $_POST[$id]);
+                                $row = mysqli_fetch_assoc($is_correct);
+                            }
                             $total_questions += +1;
-
                         ?>
                             <tr>
                                 <td><?php echo $i; ?></td>
                                 <td><?php echo $row["text"] ?></td>
                                 <td>
-                                    <?php if ($row["is_correct"] == 1) {
+                                    <?php if ( $row["is_correct"] == 1) {
                                         echo "<p style='color:green'>True </p>";
                                         $true_answer += +1;
                                     } else {

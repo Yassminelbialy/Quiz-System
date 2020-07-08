@@ -23,9 +23,9 @@ include 'sidNav.php';
                         <tbody>
                             <?php
                             require_once("../../Models/dbConnection.php");
-                            $users = mysqli_query($connect, "select * from Quiz");
+                            $quizzes = mysqli_query($connect, "select * from Quiz");
                             $i = 0;
-                            while ($row = mysqli_fetch_assoc($users)) {
+                            while ($row = mysqli_fetch_assoc($quizzes)) {
                                 $i += +1;
                             ?>
                                 <tr>

@@ -14,9 +14,16 @@
             <!-- Portfolio Item 1-->
             <?php
             require_once("../Models/dbConnection.php");
-            $users = mysqli_query($connect, "select * from Quiz");
+            $quizzes = mysqli_query($connect, "select * from Quiz");
+            // check if the user has made the quiz or not
+            $check= mysqli_query($connect, "select quiz_id from user_quiz where user_id=" . $_SESSION['id']);
+
             $i = 0;
-            while ($row = mysqli_fetch_assoc($users)) {
+            while ($row = mysqli_fetch_assoc($quizzes)) {
+                while ($quiz = mysqli_fetch_assoc($check)) {
+                        if($quiz['quiz_id']==$row['id'])
+                       continue 2;
+                } 
                 $i += +1;
 
             ?>

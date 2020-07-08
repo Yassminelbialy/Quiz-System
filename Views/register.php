@@ -27,7 +27,7 @@
                         <input type="text" class="form-control" name="name" placeholder="Name" required autofocus>
                         <input type="text" class="form-control" name="email" placeholder="Email" required>
                         <input type="password" class="form-control" name="password" placeholder="Password" required>
-                        <input type="password" class="form-control" placeholder="Re-Password" required>
+                        <input type="password" class="form-control" name="rePassword"placeholder="Re-Password" required>
 
                         <button class="btn btn-lg btn-primary btn-block" name="done" type="submit">
                             Register</button>

@@ -43,7 +43,7 @@
             </ul>
             <ul class="navbar-nav ml-auto nav-flex-icons">
                 <li class="nav-item avatar dropdown">
-                    <a href="../login.php" class="navbar-brand">Log out</a>
+                    <a href="../login.php" class="navbar-brand"><?php ?>Log out</a>
                 </li>
             </ul>
         </div>
