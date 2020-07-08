@@ -34,7 +34,7 @@
 
                     </form>
                 </div>
-                <a href="login.php" class="text-center new-account">Already Member </a>
+                <a href="login.php" class="text-center new-account"><h3>Already Member </h3> </a>
             </div>
         </div>
     </div>
