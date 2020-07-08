@@ -32,7 +32,7 @@
                                             <td><input type="text" class="form-control" name="Score" id="" value="<?php echo $row['Score']; ?>"> </td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <input type="submit" value="Update" name="done" class="btn " style=" background-color: #428bca; color:honeydew;">
+                                                    <input type="submit" value="Update" name="done" class="btn " style=" background-color: #2c3e50; color:honeydew;">
                                                 </div>
                                         </form>
                                         </td>

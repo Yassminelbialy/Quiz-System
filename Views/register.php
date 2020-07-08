@@ -5,10 +5,18 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <!------ Include the above in your HEAD tag ---------->
+    <link href="../assets/css/styles.css" rel="stylesheet" />
     <link rel="stylesheet" href="../assets/css/login.css">
 </head>
 
 <body>
+<nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger">Emodo</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+        </div>
+    </nav>
     <div class="container">
         <div class="row register">
             <div class="col-sm-6 col-md-4 col-md-offset-4">

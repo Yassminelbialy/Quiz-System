@@ -32,7 +32,7 @@
                                             <td><input type="text" class="form-control" name="Score" id="" placeholder="Enter quiz score"> </td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <input type="submit" value="ADD" name="add" class="btn " style=" background-color: #428bca; color:honeydew;">
+                                                    <input type="submit" value="ADD" name="add" class="btn " style=" background-color: #2c3e50; color:honeydew;">
                                                 </div>
                                         </form>
                                         </td>

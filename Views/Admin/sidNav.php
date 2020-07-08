@@ -7,7 +7,7 @@
     <link href="../../assets/css/font-awesome.css" rel="stylesheet" />
     <style>
         nav {
-            background-color: #428bca;
+            background-color: #2c3e50;
             height: 80px;
         }
     </style>

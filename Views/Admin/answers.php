@@ -1,7 +1,7 @@
 <?php
 $answers = mysqli_query($connect, "select * from Answer where question_id=" . $row['id']);
 ?>
-<a href="../addAnswer.php/?id=<?php echo $row['id']; ?>" class="btn" style=" background-color: #428bca; color:honeydew;margin-left: 15px;"> <i class="fas fa-plus"></i></a>
+<a href="../addAnswer.php/?id=<?php echo $row['id']; ?>" class="btn" style=" background-color: #2c3e50; color:honeydew;margin-left: 15px;"> <i class="fas fa-plus"></i></a>
 <br><br>
 <?php
 while ($ans = mysqli_fetch_assoc($answers)) { ?>

@@ -3,7 +3,7 @@
 <?php
 include 'sidNav.php';
 ?>
-<a href="addQuiz.php" class="btn " style=" background-color: #428bca; color:honeydew;margin-left: 15px;"> Add Quiz </a>
+<a href="addQuiz.php" class="btn " style=" background-color: #2c3e50; color:honeydew;margin-left: 15px;"> Add Quiz </a>
 
 <head>
     <link href="../../assets/css/bootstrap.css" rel="stylesheet" />
