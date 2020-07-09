@@ -40,7 +40,7 @@ $pass_result = "";
                                 <td><?php echo $i; ?></td>
                                 <td><?php echo $row["text"] ?></td>
                                 <td>
-                                    <?php if ( $row["is_correct"] == 1) {
+                                    <?php if ($row["is_correct"] == 1) {
                                         echo "<p style='color:green'>True </p>";
                                         $true_answer += +1;
                                     } else {
@@ -73,3 +73,18 @@ $pass_result = "";
         </div>
     </div>
 </div>
+<?php
+
+$to      = 'monyelbialy@gmail.com';
+$subject = 'A student has finished his quiz';
+$message = 'Hello Admin a student finished quiz this percentage'.$percent;
+// The message
+$message = "Line 1\nLine 2\nLine 3";
+
+// Send
+$headers = 'From: yassminelbialy@gmail.com' . "\r\n" .
+    'Reply-To: monyelbialy@gmail.com' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+
+mail($to, $subject, $message, $headers);
+?>
